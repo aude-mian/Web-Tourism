@@ -1,0 +1,139 @@
+/* static/css/auth_styles.css */
+
+/* ============ BASE ============ */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============ CARD ============ */
+.auth-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ============ TYPOGRAPHY ============ */
+.auth-title {
+    color: #2b2d42;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* ============ FORM ELEMENTS ============ */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    color: #4a4e69;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-input {
+    padding: 0.85rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+    background-color: white;
+}
+
+/* ============ BUTTON ============ */
+.auth-button {
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.auth-button:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* ============ LINKS ============ */
+.auth-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+    color: #4361ee;
+    text-decoration: underline;
+}
+
+/* ============ UTILITIES ============ */
+.error-message {
+    color: #d90429;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.alert-danger {
+    background-color: #fff0f3;
+    color: #d90429;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    border-left: 4px solid #d90429;
+}
+
+/* Séparateur entre les liens */
+.auth-links span {
+    color: #adb5bd;
+    user-select: none;
+}

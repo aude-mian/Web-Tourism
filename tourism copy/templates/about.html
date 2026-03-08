@@ -1,0 +1,139 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}About - Traveler{% endblock %}
+
+{% block content %}
+    <!-- Bannière -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase">About</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'index' %}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">About</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- À propos -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-5 pb-lg-5">
+                    <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
+                        <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
+                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et.</p>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <img class="img-fluid" src="{% static 'img/about-1.jpg' %}" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid" src="{% static 'img/about-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <a href="{% url 'destination' %}" class="btn btn-primary mt-1">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pourquoi choisir notre agence ? -->
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 text-uppercase text-teal">Pourquoi choisir notre agence ?</h2>
+            <p class="mb-5">Parce que chaque voyage mérite une attention unique, nous mettons un point d'honneur à offrir un service sur-mesure, de qualité, et surtout… à l’écoute de vos envies 🌍✨</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="fa fa-heart fa-2x text-teal mb-3"></i>
+                            <h5 class="card-title">Approche personnalisée</h5>
+                            <p class="card-text">Chaque client est unique, et chaque voyage l’est aussi. Nos offres s’adaptent à vos besoins et à votre budget.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="fa fa-map-marked-alt fa-2x text-teal mb-3"></i>
+                            <h5 class="card-title">Destinations authentiques</h5>
+                            <p class="card-text">Nous sélectionnons des lieux uniques, souvent méconnus, pour une immersion totale dans la culture locale.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="fa fa-smile-beam fa-2x text-teal mb-3"></i>
+                            <h5 class="card-title">Accompagnement humain</h5>
+                            <p class="card-text">Une équipe bienveillante et réactive vous accompagne avant, pendant et après votre aventure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos engagements -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 text-uppercase">Nos engagements</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa fa-clock fa-2x text-teal mb-3"></i>
+                        <h6 class="font-weight-bold">Disponibilité 24/7</h6>
+                        <p class="small text-muted">Une assistance à toute heure pour votre tranquillité d’esprit.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa fa-leaf fa-2x text-teal mb-3"></i>
+                        <h6 class="font-weight-bold">Tourisme durable</h6>
+                        <p class="small text-muted">Nous respectons l'environnement et les communautés locales.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa fa-shield-alt fa-2x text-teal mb-3"></i>
+                        <h6 class="font-weight-bold">Sécurité garantie</h6>
+                        <p class="small text-muted">Partenaires fiables et assurance voyage à chaque étape.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="fa fa-thumbs-up fa-2x text-teal mb-3"></i>
+                        <h6 class="font-weight-bold">Satisfaction client</h6>
+                        <p class="small text-muted">Nous écoutons vos retours et améliorons sans cesse nos services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Politique de confidentialité Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Politique de confidentialité</h6>
+                <h1>Votre vie privée est notre priorité</h1>
+            </div>
+            <p>
+                Nous nous engageons à protéger vos informations personnelles. Toutes les données que vous nous fournissez sont strictement confidentielles et utilisées uniquement pour améliorer votre expérience utilisateur.  
+                Aucune de vos informations ne sera partagée sans votre consentement explicite. Nous appliquons des normes élevées de sécurité pour préserver l'intégrité de vos données.
+            </p>
+        </div>
+    </div>
+    <!-- Politique de confidentialité End -->
+{% endblock %}

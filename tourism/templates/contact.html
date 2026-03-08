@@ -1,0 +1,97 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Contact - Traveler{% endblock %}
+
+{% block content %}
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase">Contact</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'index' %}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Contact</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Info Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="bg-white p-4 shadow-sm h-100">
+                        <i class="fa fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                        <h5 class="mb-2">Adresse</h5>
+                        <p class="mb-0">Abidjan, Cocody Riviera Bonoumin</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="bg-white p-4 shadow-sm h-100">
+                        <i class="fa fa-envelope fa-2x text-primary mb-3"></i>
+                        <h5 class="mb-2">Email</h5>
+                        <p class="mb-0">contact@traveler.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="bg-white p-4 shadow-sm h-100">
+                        <i class="fa fa-phone-alt fa-2x text-primary mb-3"></i>
+                        <h5 class="mb-2">Téléphone</h5>
+                        <p class="mb-0">+225 01 23 45 67 89</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Info End -->
+
+    <!-- Contact Form Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact</h6>
+                <h1>Contactez-nous pour toute question</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form bg-white" style="padding: 30px;">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="control-group col-sm-6">
+                                    <input type="text" class="form-control p-4" name="name" placeholder="Votre nom" required>
+                                </div>
+                                <div class="control-group col-sm-6">
+                                    <input type="email" class="form-control p-4" name="email" placeholder="Votre email" required>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" name="subject" placeholder="Sujet" required>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary py-3 px-4" type="submit">Envoyer le message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form End -->
+
+    <!-- Google Map Start -->
+    <div class="container-fluid px-0">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.216795349601!2d-3.998073724076559!3d5.497096533009432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ec782a4fc13f%3A0x9fdc1dd1df1f0a6a!2sBonoumin%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1712928384785!5m2!1sfr!2sci"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+            aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <!-- Google Map End -->
+{% endblock %}

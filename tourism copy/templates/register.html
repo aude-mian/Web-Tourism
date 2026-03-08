@@ -1,0 +1,106 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Inscription</h2>
+        
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}" class="form-label">Nom d'utilisateur</label>
+                <input type="text" 
+                       name="{{ form.username.name }}" 
+                       id="{{ form.username.id_for_label }}" 
+                       class="form-input" 
+                       value="{{ form.username.value|default:'' }}"
+                       placeholder="Choisissez un nom d'utilisateur"
+                       required>
+                {% if form.username.errors %}
+                    <div class="error-message">
+                        {% for error in form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}" class="form-label">Adresse email</label>
+                <input type="email" 
+                       name="{{ form.email.name }}" 
+                       id="{{ form.email.id_for_label }}" 
+                       class="form-input" 
+                       value="{{ form.email.value|default:'' }}"
+                       placeholder="Entrez votre adresse email"
+                       required>
+                {% if form.email.errors %}
+                    <div class="error-message">
+                        {% for error in form.email.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}" class="form-label">Mot de passe</label>
+                <input type="password" 
+                       name="{{ form.password1.name }}" 
+                       id="{{ form.password1.id_for_label }}" 
+                       class="form-input" 
+                       placeholder="Créez un mot de passe"
+                       required>
+                {% if form.password1.errors %}
+                    <div class="error-message">
+                        {% for error in form.password1.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <small class="form-hint">Au moins 8 caractères avec des chiffres et lettres.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}" class="form-label">Confirmation</label>
+                <input type="password" 
+                       name="{{ form.password2.name }}" 
+                       id="{{ form.password2.id_for_label }}" 
+                       class="form-input" 
+                       placeholder="Confirmez votre mot de passe"
+                       required>
+                {% if form.password2.errors %}
+                    <div class="error-message">
+                        {% for error in form.password2.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-actions text-center">
+                <button type="submit" class="auth-button">S'inscrire</button>
+            </div>
+            
+            <div class="auth-links">
+                <span>Déjà un compte ?</span>
+                <a href="{% url 'login' %}" class="auth-link">Se connecter</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
